@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Homepage</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vollkorn" />
+<link href='https://fonts.googleapis.com/css?family=Hind Vadodara' />
+<link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,700,900" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript">
+var currentSlide;
+
+function homepage()
+{
+  window.location.replace("index.html");
+}
+
+function showSlides(n, m) {
+  var i;
+  var projects;
+  var slides;
+  var dots;
+
+  currentSlide = m;
+  switch(m)
+  {
+    case 1:
+      slides = document.getElementsByClassName("slide");
+      dots = document.getElementsByClassName("dot");
+      break;
+    case 2:
+      slides = document.getElementsByClassName("slide2");
+      dots = document.getElementsByClassName("dot2");
+      break;
+    case 3:
+      slides = document.getElementsByClassName("slide3");
+      dots = document.getElementsByClassName("dot3");
+      break;
+    case 4:
+      slides = document.getElementsByClassName("slide4");
+      dots = document.getElementsByClassName("dot4");
+      break;
+    case 5:
+      break;
+  }
+
+  projects = document.getElementsByClassName("gridItem");
+
+  for (i = 0; i < 6; i++)
+  {
+    projects[i].style.display = "none";
+  } projects[m-1].style.display = "block";
+
+
+  for (i = 0; i < slides.length; i++)
+  {
+      slides[i].style.display = "none";
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[n].style.display = "block";
+  dots[n].className += " active";
+}
+
+function prev() {
+  if (currentSlide > 1)
+  {
+    showSlides(0, currentSlide - 1);
+  }
+  else {
+    showSlides(0, 4);
+  }
+}
+
+function next() {
+  if (currentSlide < 4)
+  {
+    showSlides(0, currentSlide + 1);
+  }
+  else
+  {
+    showSlides(0, 1);
+  }
+}
+
+</script>
+</head>
+<body>
+  <div class="header">
+      <!-- <div><img style="padding-left: 0.4em; margin-top: 0.1em; opacity: 0.8;" src="images/logoGL.png" alt="University of Guelph logo" height="40" width="135"></div> -->
+      <div id="logo"><i onclick="homepage();" class="fa fa-codepen" style="cursor: pointer; margin-top: -0.07em; padding-left: 0.5em; padding-top: 0em; padding-bottom: 0em; color: white; background-color: rgb(29, 38, 43); font-size: 40px;"></i><img onclick="homepage();" style="opacity: 0.8; margin-top: 0em; padding-left: 0em; cursor: pointer;" src="images/logoname.png" alt="Logo" height="35" width="64"></div>
+      <div><a class="headerItem" href="index.html ">Home</a></div>
+      <div><a class="headerItem" href="about.html ">About</a></div>
+      <div><a class="headerItem" href="resume.html">Resume</a></div>
+  </div>
+<h1>Giavinh Lam<h1>
+<h2>3rd year Computer Engineering student at the University of Guelph</h2>
+
+<div class="bottom">
+
+  <div><a class="prev" onclick="prev()">&#10094;</a><h3 style="display: inline-block; padding-top: 0.3em;">Coding Projects</h3><a class="next" onclick="next()">&#10095;</a></div>
+  <div class="gridContainer">
+    <div class="gridItem">
+      <div class="slideshow">
+        <div class="slide">
+          <img src="images/markmanagement.png" style="width:100%">
+        </div>
+
+        <div class="slide">
+          <img src="images/markmanagement.png" style="width:100%">
+        </div>
+
+        <div class="slide">
+          <img src="images/markmanagement.png" style="width:100%">
+        </div>
+      </div>
+
+      <br>
+      <div style="text-align:center">
+        <span class="dot" onclick="showSlides(0, 1)"></span>
+        <span style="display: none" class="dot" onclick="showSlides(1, 1)"></span>
+        <span style="display: none" class="dot" onclick="showSlides(2, 1)"></span>
+      </div>
+
+      <h4 class="description"><a target="_blank" class="description-link" href="https://markmanagement.stream">Mark Management</a> is a full stack website I created for fun in order to help users manage and predict their grades. It was created using HTML, CSS, Javascript, Java (Servlets and JSPs) and mySQL. It is still a WIP (Work in Progress). Functionality includes: Pages set up, form validation, signing up, logging in, and adding/removing grades. To do: CSS styling, more responsive design, more functionality with grades, SQL injection protection, and cookies.</h4>
+    </div>
+
+    <div class="gridItem">
+      <div class="slideshow">
+        <div class="slide2">
+          <img src="images/store1.png" style="width:90%;">
+        </div>
+
+        <div class="slide2">
+          <img src="images/store2A.png" style="width:100%">
+        </div>
+
+        <div class="slide2">
+          <img src="images/store1A.png" style="width:100%">
+        </div>
+      </div>
+
+      <br>
+      <div style="text-align:center">
+        <span class="dot2" onclick="showSlides(0, 2)"></span>
+        <span class="dot2" onclick="showSlides(1, 2)"></span>
+        <span class="dot2" onclick="showSlides(2, 2)"></span>
+      </div>
+
+      <h4 class="description"><a class="description-link" target="_blank" href="https://github.com/GV79/JavaStore">Java program</a> which allows users to store books/electronics, search the store using filters, and supports saving to/loading from text files. The program uses object-oriented concepts (polymorphism, encapsulation, abstraction, and inheritance), data structures like HashMaps and ArrayLists, Swing for the GUI, and has defensive programming/exception handling.</h4>
+    </div>
+
+
+    <div class="gridItem">
+      <div class="slideshow">
+        <div class="slide3">
+          <img src="images/calendar1A.png" style="width:80%;">
+        </div>
+
+        <div class="slide3">
+          <img src="images/calendar2A.png" style="width:80%">
+        </div>
+
+        <div class="slide3">
+          <img src="images/calendar3A.png" style="width:80%">
+        </div>
+      </div>
+
+      <br>
+      <div style="text-align:center">
+        <span class="dot3" onclick="showSlides(0, 3)"></span>
+        <span class="dot3" onclick="showSlides(1, 3)"></span>
+        <span class="dot3" onclick="showSlides(2, 3)"></span>
+      </div>
+
+      <h4 class="description">iCalendar (<a class="description-link" target="_blank" href="https://tools.ietf.org/html/rfc5545">.ics files</a>) parser and information extractor. The frontend was created using Python 3 (TkInter), logic/core functionality was implemented with C, and Python was also used to communicate with the mySQL database. This program was setup and created all in the Linux terminal.</h4>
+    </div>
+
+    <div class="gridItem">
+      <div class="slideshow">
+        <div class="slide4">
+          <img src="images/french1.png" style="width:80%;">
+        </div>
+
+        <div class="slide4">
+          <img src="images/french3.png" style="width:80%">
+        </div>
+
+        <div class="slide4">
+          <img src="images/french4.png" style="width:80%">
+        </div>
+      </div>
+
+      <br>
+      <div style="text-align:center">
+        <span class="dot4" onclick="showSlides(0, 4)"></span>
+        <span class="dot4" onclick="showSlides(1, 4)"></span>
+        <span class="dot4" onclick="showSlides(2, 4)"></span>
+      </div>
+
+      <h4 class="description">French Conjugator is an Android app I created for fun to help users with their french conjugation skills. It was created using Java in Android Studio and is still a WIP.</h4>
+    </div>
+
+    <div class="gridItem">5</div>
+    <div class="gridItem">6</div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="email"><a style="font-size: 1.5em" href="mailto:glam01@uoguelph.ca" target="_top">glam01@uoguelph.ca</a></div>
+  <a target="_blank" href="https://www.linkedin.com/in/giavinh-lam-aa5bb2117/"><i class="fa fa-linkedin-square" style="font-size: 30px;"></i></a>
+  <a target="_blank" href="https://github.com/gv79"><i class="fa fa-github" style="font-size: 30px;"></i></a>
+</div>
+
+<script>
+showSlides(0, 1);
+</script>
+
+</body>
+</html>
