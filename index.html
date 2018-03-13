@@ -70,12 +70,12 @@ function prev() {
     showSlides(0, currentSlide - 1);
   }
   else {
-    showSlides(0, 4);
+    showSlides(0, 5);
   }
 }
 
 function next() {
-  if (currentSlide < 4)
+  if (currentSlide < 5)
   {
     showSlides(0, currentSlide + 1);
   }
@@ -90,7 +90,7 @@ function next() {
 <body>
   <div class="header">
       <!-- <div><img style="padding-left: 0.4em; margin-top: 0.1em; opacity: 0.8;" src="images/logoGL.png" alt="University of Guelph logo" height="40" width="135"></div> -->
-      <div id="logo"><i onclick="homepage();" class="fa fa-codepen" style="cursor: pointer; margin-top: -0.07em; padding-left: 0.5em; padding-top: 0em; padding-bottom: 0em; color: white; background-color: rgb(29, 38, 43); font-size: 40px;"></i><img onclick="homepage();" style="opacity: 0.8; margin-top: 0em; padding-left: 0em; cursor: pointer;" src="images/logoname.png" alt="Logo" height="35" width="64"></div>
+      <div id="logo"><i onclick="homepage();" class="fa fa-codepen" style="cursor: pointer; margin-top: -0.07em; padding-left: 0.5em; padding-top: 0.1em; padding-bottom: 0em; color: white; background-color: rgb(29, 38, 43); font-size: 32px;"></i><img onclick="homepage();" style="opacity: 0.8; margin-top: -0em; padding-left: 0em; cursor: pointer;" src="images/logoname.png" alt="Logo" height="35" width="64"></div>
       <div><a class="headerItem" href="index.html ">Home</a></div>
       <div><a class="headerItem" href="about.html ">About</a></div>
       <div><a class="headerItem" href="resume.html">Resume</a></div>
@@ -102,14 +102,16 @@ function next() {
 
   <div><a class="prev" onclick="prev()">&#10094;</a><h3 style="display: inline-block; padding-top: 0.3em;">Coding Projects</h3><a class="next" onclick="next()">&#10095;</a></div>
   <div class="gridContainer">
+
     <div class="gridItem">
       <div class="slideshow">
         <div class="slide">
-          <img src="images/markmanagement.png" style="width:100%">
+          <img src="images/ChatClientMain.png" style="width:100%;">
+
         </div>
 
         <div class="slide">
-          <img src="images/markmanagement.png" style="width:100%">
+          <img src="images/ChatClientSecondMessages.png" style="width:100%">
         </div>
 
         <div class="slide">
@@ -118,10 +120,41 @@ function next() {
       </div>
 
       <br>
+
       <div style="text-align:center">
         <span class="dot" onclick="showSlides(0, 1)"></span>
-        <span style="display: none" class="dot" onclick="showSlides(1, 1)"></span>
+        <span class="dot" onclick="showSlides(1, 1)"></span>
         <span style="display: none" class="dot" onclick="showSlides(2, 1)"></span>
+      </div>
+
+      <h4 class="description">This is a chat client web app I made for fun. It is created with HTML, CSS, javascript (jQuery), Node.js, Express, and Socket.IO. The chat works for anonymous users however, I plan on implementing accounts with mySQL and hosting it using Azure.</h4>
+    </div>
+
+    <div class="gridItem">
+      <!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev" style="float: left; margin: 0; padding: 0;">
+        <i class="fa fa-chevron-left" style="font-size:36px; margin: 5em 0em 0em 0em; padding: 0; color: black;"></i>
+      </a> -->
+      <div class="slideshow">
+        <div class="slide2">
+          <img src="images/markmanagement.png" style="width:100%;">
+
+        </div>
+
+        <!-- <div class="slide2">
+          <img src="images/markmanagement.png" style="width:100%">
+        </div>
+
+        <div class="slide2">
+          <img src="images/markmanagement.png" style="width:100%">
+        </div> -->
+      </div>
+
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot2" onclick="showSlides(0, 2)"></span>
+        <!-- <span style="display: none" class="dot" onclick="showSlides(1, 2)"></span>
+        <span style="display: none" class="dot" onclick="showSlides(2, 2)"></span> -->
       </div>
 
       <h4 class="description"><a target="_blank" class="description-link" href="https://markmanagement.stream">Mark Management</a> is a full stack website I created for fun in order to help users manage and predict their grades. It was created using HTML, CSS, Javascript, Java (Servlets and JSPs) and mySQL. It is still a WIP (Work in Progress). Functionality includes: Pages set up, form validation, signing up, logging in, and adding/removing grades. To do: CSS styling, more responsive design, more functionality with grades, SQL injection protection, and cookies.</h4>
@@ -129,42 +162,16 @@ function next() {
 
     <div class="gridItem">
       <div class="slideshow">
-        <div class="slide2">
+        <div class="slide3">
           <img src="images/store1.png" style="width:90%;">
         </div>
 
-        <div class="slide2">
+        <div class="slide3">
           <img src="images/store2A.png" style="width:100%">
         </div>
 
-        <div class="slide2">
+        <div class="slide3">
           <img src="images/store1A.png" style="width:100%">
-        </div>
-      </div>
-
-      <br>
-      <div style="text-align:center">
-        <span class="dot2" onclick="showSlides(0, 2)"></span>
-        <span class="dot2" onclick="showSlides(1, 2)"></span>
-        <span class="dot2" onclick="showSlides(2, 2)"></span>
-      </div>
-
-      <h4 class="description"><a class="description-link" target="_blank" href="https://github.com/GV79/JavaStore">Java program</a> which allows users to store books/electronics, search the store using filters, and supports saving to/loading from text files. The program uses object-oriented concepts (polymorphism, encapsulation, abstraction, and inheritance), data structures like HashMaps and ArrayLists, Swing for the GUI, and has defensive programming/exception handling.</h4>
-    </div>
-
-
-    <div class="gridItem">
-      <div class="slideshow">
-        <div class="slide3">
-          <img src="images/calendar1A.png" style="width:80%;">
-        </div>
-
-        <div class="slide3">
-          <img src="images/calendar2A.png" style="width:80%">
-        </div>
-
-        <div class="slide3">
-          <img src="images/calendar3A.png" style="width:80%">
         </div>
       </div>
 
@@ -175,21 +182,22 @@ function next() {
         <span class="dot3" onclick="showSlides(2, 3)"></span>
       </div>
 
-      <h4 class="description">iCalendar (<a class="description-link" target="_blank" href="https://tools.ietf.org/html/rfc5545">.ics files</a>) parser and information extractor. The frontend was created using Python 3 (TkInter), logic/core functionality was implemented with C, and Python was also used to communicate with the mySQL database. This program was setup and created all in the Linux terminal.</h4>
+      <h4 class="description"><a class="description-link" target="_blank" href="https://github.com/GV79/JavaStore">Java program</a> which allows users to store books/electronics, search the store using filters, and supports saving to/loading from text files. The program uses object-oriented concepts (polymorphism, encapsulation, abstraction, and inheritance), data structures like HashMaps and ArrayLists, Swing for the GUI, and has defensive programming/exception handling.</h4>
     </div>
+
 
     <div class="gridItem">
       <div class="slideshow">
         <div class="slide4">
-          <img src="images/french1.png" style="width:80%;">
+          <img src="images/calendar1A.png" style="width:80%;">
         </div>
 
         <div class="slide4">
-          <img src="images/french3.png" style="width:80%">
+          <img src="images/calendar2A.png" style="width:80%">
         </div>
 
         <div class="slide4">
-          <img src="images/french4.png" style="width:80%">
+          <img src="images/calendar3A.png" style="width:80%">
         </div>
       </div>
 
@@ -200,10 +208,35 @@ function next() {
         <span class="dot4" onclick="showSlides(2, 4)"></span>
       </div>
 
+      <h4 class="description">iCalendar (<a class="description-link" target="_blank" href="https://tools.ietf.org/html/rfc5545">.ics files</a>) parser and information extractor. The frontend was created using Python 3 (TkInter), logic/core functionality was implemented with C, and Python was also used to communicate with the mySQL database. This program was setup and created all in the Linux terminal.</h4>
+    </div>
+
+    <div class="gridItem">
+      <div class="slideshow">
+        <div class="slide5">
+          <img src="images/french1.png" style="width:80%;">
+        </div>
+
+        <div class="slide5">
+          <img src="images/french3.png" style="width:80%">
+        </div>
+
+        <div class="slide5">
+          <img src="images/french4.png" style="width:80%">
+        </div>
+      </div>
+
+      <br>
+      <div style="text-align:center">
+        <span class="dot5" onclick="showSlides(0, 5)"></span>
+        <span class="dot5" onclick="showSlides(1, 5)"></span>
+        <span class="dot5" onclick="showSlides(2, 5)"></span>
+      </div>
+
       <h4 class="description">French Conjugator is an Android app I created for fun to help users with their french conjugation skills. It was created using Java in Android Studio and is still a WIP.</h4>
     </div>
 
-    <div class="gridItem">5</div>
+    <!-- <div class="gridItem">5</div> -->
     <div class="gridItem">6</div>
   </div>
 </div>
