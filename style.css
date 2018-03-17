@@ -35,10 +35,6 @@ h1 {
   text-align: center;
 }
 
-h6 {
-  padding-left: 1em;
-  padding-right: 1em;
-}
 
 div a {
   color: WHITE;
@@ -146,6 +142,8 @@ h6 {
   font-size: 1.2em;
   font-family: 'Montserrat', Helvetica, Arial, sans-serif;
   font-weight: 400;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 .email {
@@ -180,7 +178,7 @@ div img {
     display: none;
 }
 
-.dot, .dot2, .dot3, .dot4 {
+.dot, .dot2, .dot3, .dot4, .dot5, .dot6, .dot7 {
   cursor:pointer;
   height: 15px;
   width: 15px;
