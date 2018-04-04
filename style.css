@@ -60,10 +60,26 @@ h2 {
   font-size: 1.8em;
   font-family: 'Montserrat', Helvetica, Arial, sans-serif;
   font-weight: 400;
-  padding-bottom: 0.8em;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  /* display: inline; */
 }
+
+/* The typing effect for h2 to be implemented, credit @ Geoff Graham */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect, credit @ Geoff Graham */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white; }
+}
+
+/* @keyframes disappear {
+
+} */
 
 h3 {
   color: rgb(56, 54, 54);
@@ -212,6 +228,20 @@ div img {
 
 #logo {
   display: none;
+}
+
+@media only screen and (min-width: 1150px)
+{
+  h2 { /* credit @ Geoff Graham, some modifications done for my specific website  */
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid transparent; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .05em; /* Adjust as needed */
+    animation:
+      typing 3s steps(40, end),
+      blink-caret .75s step-end 3;
+  }
 }
 
 @media only screen and (min-width: 600px) {
