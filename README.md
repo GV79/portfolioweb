@@ -1,4 +1,4 @@
-# markmanagement
-Java Web Application (Servlets, JSPs, HTML, CSS, Javascript) which runs on Apache Tomcat with database support (mySQL). 
+# portfolioweb
+A portfolio website I created for myself using HTML, CSS, JavaScript, and some frameworks.
 
-Built in the Eclipse IDE (Dynamic Web Project) and hosted on https://markmanagement.stream/.
+I will update the design and text of this website over time. Currently deployed on https://giavinhlam.site/ via MochaHost.
