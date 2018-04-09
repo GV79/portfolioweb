@@ -77,15 +77,10 @@ h2 {
   50% { border-color: white; }
 }
 
-/* @keyframes disappear {
-
-} */
-
 h3 {
   color: rgb(56, 54, 54);
   text-align: center;
   font-size: 2em;
-  padding-top: 1em;
   margin-bottom: 0em;
   font-family: 'Montserrat';
   font-weight: 300;
