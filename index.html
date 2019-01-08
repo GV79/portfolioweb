@@ -16,8 +16,7 @@
   <script type="text/javascript">
     var currentSlide;
 
-    function homepage()
-    {
+    function homepage() {
       window.location.replace("index.html");
     }
 
@@ -28,8 +27,7 @@
       var dots;
 
       currentSlide = m;
-      switch(m)
-      {
+      switch(m) {
         case 1:
           slides = document.getElementsByClassName("slide");
           dots = document.getElementsByClassName("dot");
@@ -55,13 +53,11 @@
       projects = document.getElementsByClassName("gridItem");
 
 
-      for (i = 0; i < 6; i++)
-      {
+      for (i = 0; i < 6; i++) {
         projects[i].style.display = "none";
       } projects[m-1].style.display = "block";
 
-      for (i = 0; i < slides.length; i++)
-      {
+      for (i = 0; i < slides.length; i++) {
           slides[i].style.display = "none";
           dots[i].className = dots[i].className.replace(" active", "");
       }
@@ -70,8 +66,7 @@
     }
 
     function prev() {
-      if (currentSlide > 1)
-      {
+      if (currentSlide > 1) {
         showSlides(0, currentSlide - 1);
       }
       else {
@@ -80,12 +75,10 @@
     }
 
     function next() {
-      if (currentSlide < 5)
-      {
+      if (currentSlide < 5) {
         showSlides(0, currentSlide + 1);
       }
-      else
-      {
+      else {
         showSlides(0, 1);
       }
     }
@@ -93,8 +86,7 @@
 </head>
 <body>
   <div class="header">
-      <!-- <div><img style="padding-left: 0.4em; margin-top: 0.1em; opacity: 0.8;" src="images/logoGL.png" alt="University of Guelph logo" height="40" width="135"></div> -->
-      <div id="logo"><i onclick="homepage();" class="fa fa-codepen" style="cursor: pointer; margin-top: -0.07em; padding-left: 0.5em; padding-top: 0.1em; padding-bottom: 0em; color: white; background-color: rgb(29, 38, 43); font-size: 32px;"></i><img onclick="homepage();" style="opacity: 0.8; margin-top: 0.10em; padding-left: 0em; cursor: pointer;" src="images/logoname.png" alt="Logo" height="26" width="46"></div>
+      <div id="logo"><i onclick="homepage();" class="fa fa-codepen" style="cursor: pointer; margin-top: -0.07em; padding-left: 0.5em; padding-top: 0.1em; padding-bottom: 0em; color: white; background-color: rgb(29, 38, 43); font-size: 32px;"></i></div>
       <div><a class="headerItem" href="index.html ">Home</a></div>
       <div><a class="headerItem" href="about.html ">About</a></div>
       <div><a class="headerItem" href="resume.html">Resume</a></div>
@@ -106,7 +98,7 @@
   <script src="lib/stats.js"></script>
 
   <h1>Giavinh Lam<h1>
-  <h2>3rd year Computer Engineering student at the University of Guelph</h2>
+  <h2>4th year Computer Engineering student at the University of Guelph</h2>
   <p><br></p>
 
   <div class="bottom">

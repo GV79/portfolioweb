@@ -108,7 +108,6 @@ h3 {
   position: absolute;
   background-color: rgb(43,49,55);
   width: 100%;
-  bottom: 0;
   height: 105px;
 }
 
@@ -234,8 +233,7 @@ div img {
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
     letter-spacing: .05em; /* Adjust as needed */
     animation:
-      typing 3s steps(40, end),
-      blink-caret .75s step-end 3;
+      typing 3s steps(40, end);
   }
 }
 
