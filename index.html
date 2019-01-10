@@ -7,13 +7,19 @@
   <meta name="description" content="Giavinh Lam's Portfolio Website">
   <meta name="keywords" content="Giavinh, Giavinh Lam, Gia Vinh Lam, Gia Vinh, HTML, CSS, JavaScript, Java">
   <meta name="author" content="Giavinh Lam">
+
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vollkorn" />
   <link href='https://fonts.googleapis.com/css?family=Hind Vadodara' />
   <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,700,900" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script type="text/javascript">
+    // Ideas for migrating to an easier way to dynamically add new slides
+    // 2D array - Rows represent projects, columns are relative links to images, last column is always the description, array lengths would be used to help dynamically create the HTML in JS
+    // At the moment however, it does not take long at all to add new slides so this feature is not a priority (would simply be better code)
+
     var currentSlide;
 
     function homepage() {
@@ -48,6 +54,10 @@
           slides = document.getElementsByClassName("slide5");
           dots = document.getElementsByClassName("dot5");
           break;
+        case 6:
+          slides = document.getElementsByClassName("slide6");
+          dots = document.getElementsByClassName("dot6");
+          break;
       }
 
       projects = document.getElementsByClassName("gridItem");
@@ -70,12 +80,12 @@
         showSlides(0, currentSlide - 1);
       }
       else {
-        showSlides(0, 5);
+        showSlides(0, 6);
       }
     }
 
     function next() {
-      if (currentSlide < 5) {
+      if (currentSlide < 6) {
         showSlides(0, currentSlide + 1);
       }
       else {
@@ -134,7 +144,6 @@
         <div class="slideshow">
           <div class="slide2">
             <img src="images/markmanagement.png" style="width:100%;">
-
           </div>
 
           <!-- <div class="slide2">
@@ -232,7 +241,40 @@
       </div>
 
       <!-- <div class="gridItem">5</div> -->
-      <div class="gridItem">6</div>
+      <div class="gridItem">
+        <div class="slideshow">
+          <div class="slide6">
+            <img src="images/signage-1.png" style="width:80%;">
+          </div>
+
+          <div class="slide6">
+            <img src="images/signage-2.png" style="width:80%">
+          </div>
+
+          <div class="slide6">
+            <img src="images/signage-3.png" style="width:80%">
+          </div>
+
+          <div class="slide6">
+            <img src="images/signage-4.png" style="width:80%">
+          </div>
+
+          <div class="slide6">
+            <img src="images/signage-5.png" style="width:80%">
+          </div>
+        </div>
+
+        <br>
+        <div style="text-align:center">
+          <span class="dot6" onclick="showSlides(0, 6)"></span>
+          <span class="dot6" onclick="showSlides(1, 6)"></span>
+          <span class="dot6" onclick="showSlides(2, 6)"></span>
+          <span class="dot6" onclick="showSlides(3, 6)"></span>
+          <span class="dot6" onclick="showSlides(4, 6)"></span>
+        </div>
+
+        <h4 class="description">Open-ended CIS3750 project of sample digital signage. This <a class="description-link" target="_blank" href="http://socsreynolds.site">website </a> comes with a full fledged login and signup system and allows admins to manipulate content for a dashboard. This project was created using HTML, CSS (Bootstrap), JavaScript (jQuery), and MongoDB. Additional modules such as nodemailer (for email signup system), Dropzone.js (file drag and drop capability) and Openweather API (for temperature information) were also used. Code can be found <a class="description-link" target="_blank" href="https://github.com/GV79/reynoldstest">here.</a></h4>
+      </div>
     </div>
   </div>
 
