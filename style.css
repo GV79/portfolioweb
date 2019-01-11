@@ -174,10 +174,7 @@ h6 {
 
 .gridItem {
   color: black;
-  padding: 5em;
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-top: 3.5em;
+  padding: 3.5em 1em 4em 1em;
 }
 
 div img {

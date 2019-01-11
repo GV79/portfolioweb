@@ -115,23 +115,54 @@
     <div><a class="prev" onclick="prev()">&#10094;</a><h3 style="display: inline-block; padding-top: 0.3em;">Coding Projects</h3><a class="next" onclick="next()">&#10095;</a></div>
     <div class="gridContainer">
       <div class="gridItem">
+          <div class="slideshow">
+            <div class="slide">
+              <img src="images/signage-1.png" style="width:80%;">
+            </div>
+  
+            <div class="slide">
+              <img src="images/signage-2.png" style="width:80%">
+            </div>
+  
+            <div class="slide">
+              <img src="images/signage-3.png" style="width:80%">
+            </div>
+  
+            <div class="slide">
+              <img src="images/signage-4.png" style="width:80%">
+            </div>
+  
+            <div class="slide">
+              <img src="images/signage-5.png" style="width:80%">
+            </div>
+          </div>
+  
+          <br>
+          <div style="text-align:center">
+            <span class="dot" onclick="showSlides(0, 1)"></span>
+            <span class="dot" onclick="showSlides(1, 1)"></span>
+            <span class="dot" onclick="showSlides(2, 1)"></span>
+            <span class="dot" onclick="showSlides(3, 1)"></span>
+            <span class="dot" onclick="showSlides(4, 1)"></span>
+          </div>
+  
+          <h4 class="description">Open-ended CIS3750 project of sample digital signage. This <a class="description-link" target="_blank" href="http://socsreynolds.site">website </a> comes with a full fledged login and signup system and allows admins to manipulate content for a dashboard. This project was created using Node.js, HTML, CSS (Bootstrap), and JavaScript (jQuery). MongoDB and Cloudinary were used for data storage (accounts, images... etc.). Additional modules and services such as nodemailer (for email signup system), Dropzone.js (file drag and drop capability) and Openweather API (for temperature information) were also used. Code and project dependencies can be found <a class="description-link" target="_blank" href="https://github.com/GV79/reynoldstest">here.</a></h4>
+      </div>
+
+      <div class="gridItem">
         <div class="slideshow">
-          <div class="slide">
+          <div class="slide2">
             <img src="images/ChatClientMain.png" style="width:100%;">
           </div>
 
-          <div class="slide">
+          <div class="slide2">
             <img src="images/ChatClientSecondMessages.png" style="width:100%">
           </div>
 
-          <div class="slide">
-            <img src="images/markmanagement.png" style="width:100%">
-          </div>
         </div><br>
         <div style="text-align:center">
-          <span class="dot" onclick="showSlides(0, 1)"></span>
-          <span class="dot" onclick="showSlides(1, 1)"></span>
-          <span style="display: none" class="dot" onclick="showSlides(2, 1)"></span>
+          <span class="dot2" onclick="showSlides(0, 2)"></span>
+          <span class="dot2" onclick="showSlides(1, 2)"></span>
         </div>
 
         <h4 class="description">This is a <a class="description-link" target="_blank" href="https://obscure-harbor-66476.herokuapp.com/">chat client </a> web app I made for fun. It was created with HTML, CSS (Bootstrap), javascript (jQuery), Node.js, Express, and Socket.IO. The chat works for anonymous users and also has account functionality via mongoDB. Test with username: 'user' and password: 'default'. Code can be found <a class="description-link" target="_blank" href="https://github.com/GV79/chatclient">here.</a> Due to hosting settings, the website will initially take some time to load.</h4>
@@ -142,7 +173,7 @@
           <i class="fa fa-chevron-left" style="font-size:36px; margin: 5em 0em 0em 0em; padding: 0; color: black;"></i>
         </a> -->
         <div class="slideshow">
-          <div class="slide2">
+          <div class="slide3">
             <img src="images/markmanagement.png" style="width:100%;">
           </div>
 
@@ -156,7 +187,7 @@
         </div><br>
 
         <div style="text-align:center">
-          <span class="dot2" onclick="showSlides(0, 2)"></span>
+          <span class="dot3" onclick="showSlides(0, 3)"></span>
           <!-- <span style="display: none" class="dot" onclick="showSlides(1, 2)"></span>
           <span style="display: none" class="dot" onclick="showSlides(2, 2)"></span> -->
         </div>
@@ -166,42 +197,16 @@
 
       <div class="gridItem">
         <div class="slideshow">
-          <div class="slide3">
+          <div class="slide4">
             <img src="images/store1.png" style="width:90%;">
           </div>
 
-          <div class="slide3">
+          <div class="slide4">
             <img src="images/store2A.png" style="width:100%">
           </div>
 
-          <div class="slide3">
+          <div class="slide4">
             <img src="images/store1A.png" style="width:100%">
-          </div>
-        </div>
-
-        <br>
-        <div style="text-align:center">
-          <span class="dot3" onclick="showSlides(0, 3)"></span>
-          <span class="dot3" onclick="showSlides(1, 3)"></span>
-          <span class="dot3" onclick="showSlides(2, 3)"></span>
-        </div>
-
-        <h4 class="description"><a class="description-link" target="_blank" href="https://github.com/GV79/JavaStore">Java program</a> which allows users to store books/electronics, search the store using filters, and supports saving to/loading from text files. The program uses object-oriented concepts (polymorphism, encapsulation, abstraction, and inheritance), data structures like HashMaps and ArrayLists, Swing for the GUI, and has defensive programming/exception handling.</h4>
-      </div>
-
-
-      <div class="gridItem">
-        <div class="slideshow">
-          <div class="slide4">
-            <img src="images/calendar1A.png" style="width:80%;">
-          </div>
-
-          <div class="slide4">
-            <img src="images/calendar2A.png" style="width:80%">
-          </div>
-
-          <div class="slide4">
-            <img src="images/calendar3A.png" style="width:80%">
           </div>
         </div>
 
@@ -212,21 +217,22 @@
           <span class="dot4" onclick="showSlides(2, 4)"></span>
         </div>
 
-        <h4 class="description">iCalendar (<a class="description-link" target="_blank" href="https://tools.ietf.org/html/rfc5545">.ics files</a>) parser and information extractor. The frontend was created using Python 3 (TkInter), logic/core functionality was implemented with C, and Python was also used to communicate with the mySQL database. This program was setup and created all in the Linux terminal. Code can be found <a class="description-link" target="_blank" href="https://github.com/GV79/calendarPlus-SQL">here.</a></h4>
+        <h4 class="description"><a class="description-link" target="_blank" href="https://github.com/GV79/JavaStore">Java program</a> which allows users to store books/electronics, search the store using filters, and supports saving to/loading from text files. The program uses object-oriented concepts (polymorphism, encapsulation, abstraction, and inheritance), data structures like HashMaps and ArrayLists, Swing for the GUI, and has defensive programming/exception handling.</h4>
       </div>
+
 
       <div class="gridItem">
         <div class="slideshow">
           <div class="slide5">
-            <img src="images/french1.png" style="width:80%;">
+            <img src="images/calendar1A.png" style="width:80%;">
           </div>
 
           <div class="slide5">
-            <img src="images/french3.png" style="width:80%">
+            <img src="images/calendar2A.png" style="width:80%">
           </div>
 
           <div class="slide5">
-            <img src="images/french4.png" style="width:80%">
+            <img src="images/calendar3A.png" style="width:80%">
           </div>
         </div>
 
@@ -237,30 +243,21 @@
           <span class="dot5" onclick="showSlides(2, 5)"></span>
         </div>
 
-        <h4 class="description">French Conjugator is an Android app I created for fun to help users with their french conjugation skills. It was created using Java in Android Studio and is still a WIP.</h4>
+        <h4 class="description">iCalendar (<a class="description-link" target="_blank" href="https://tools.ietf.org/html/rfc5545">.ics files</a>) parser and information extractor. The frontend was created using Python 3 (TkInter), logic/core functionality was implemented with C, and Python was also used to communicate with the mySQL database. This program was setup and created all in the Linux terminal. Code can be found <a class="description-link" target="_blank" href="https://github.com/GV79/calendarPlus-SQL">here.</a></h4>
       </div>
 
-      <!-- <div class="gridItem">5</div> -->
       <div class="gridItem">
         <div class="slideshow">
           <div class="slide6">
-            <img src="images/signage-1.png" style="width:80%;">
+            <img src="images/french1.png" style="width:80%;">
           </div>
 
           <div class="slide6">
-            <img src="images/signage-2.png" style="width:80%">
+            <img src="images/french3.png" style="width:80%">
           </div>
 
           <div class="slide6">
-            <img src="images/signage-3.png" style="width:80%">
-          </div>
-
-          <div class="slide6">
-            <img src="images/signage-4.png" style="width:80%">
-          </div>
-
-          <div class="slide6">
-            <img src="images/signage-5.png" style="width:80%">
+            <img src="images/french4.png" style="width:80%">
           </div>
         </div>
 
@@ -269,12 +266,12 @@
           <span class="dot6" onclick="showSlides(0, 6)"></span>
           <span class="dot6" onclick="showSlides(1, 6)"></span>
           <span class="dot6" onclick="showSlides(2, 6)"></span>
-          <span class="dot6" onclick="showSlides(3, 6)"></span>
-          <span class="dot6" onclick="showSlides(4, 6)"></span>
         </div>
 
-        <h4 class="description">Open-ended CIS3750 project of sample digital signage. This <a class="description-link" target="_blank" href="http://socsreynolds.site">website </a> comes with a full fledged login and signup system and allows admins to manipulate content for a dashboard. This project was created using HTML, CSS (Bootstrap), JavaScript (jQuery), Node.js, and MongoDB. Additional modules and services such as nodemailer (for email signup system), Dropzone.js (file drag and drop capability) and Openweather API (for temperature information) were also used. Code and project dependencies can be found <a class="description-link" target="_blank" href="https://github.com/GV79/reynoldstest">here.</a></h4>
+        <h4 class="description">French Conjugator is an Android app I created for fun to help users with their french conjugation skills. It was created using Java in Android Studio and is still a WIP.</h4>
       </div>
+
+      <!-- <div class="gridItem">5</div> -->
     </div>
   </div>
 
