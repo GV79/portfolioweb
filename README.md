@@ -1,4 +1,4 @@
 # portfolioweb
-A portfolio website I created for myself using HTML, CSS, JavaScript, and some frameworks.
+A simple portfolio website I created for myself using HTML, CSS (Bootstrap), and JavaScript (jQuery).
 
-I will update the design and text of this website over time. Currently deployed on https://giavinhlam.site/ via MochaHost.
+The design and text of this website will be updated over time. Currently deployed on https://giavinhlam.me/ via MochaHost.
