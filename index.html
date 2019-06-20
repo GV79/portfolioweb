@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Homepage</title>
+    <title>Giavinh Lam</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Giavinh Lam's Portfolio Website">
@@ -15,37 +15,34 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    
     <script type="text/javascript">
-      // To do: Clean up CSS, turn into SPA
-
       const slideObjects = [
        {
-          description: 'Open-ended CIS4720 (image processing) project for detecting the ripeness of a banana. This <a class="description-link" target="_blank" href="http://stark-gorge-37151.herokuapp.com/">web application </a> makes it easy to test whether a banana is ripe, overripe, or underripe. It may take some time to initially load the website due to being deployed using a free Heroku dyno. This project was created using React.js (frontend) and Python 3 (backend). I worked on the algorithm and front-end design for this project. Code and project dependencies can be found <a class="description-link" target="_blank" href="https://github.com/peken97/BananaRipenessDetector">here.</a>',
+          description: 'Open-ended CIS4720 (image processing) project for detecting the ripeness of a banana. This <a class="description-link" target="_blank" href="http://stark-gorge-37151.herokuapp.com/" aria-label="Banana Ripeness Detector">web application </a> makes it easy to test whether a banana is ripe, overripe, or underripe. It may take some time to initially load the website due to being deployed using a free Heroku dyno. This project was created using React.js (frontend) and Python 3 (backend). I worked on the algorithm and front-end design for this project. Code and project dependencies can be found <a class="description-link" target="_blank" href="https://github.com/peken97/BananaRipenessDetector" aria-label="Banana Ripeness Detector GitHub">here.</a>',
           numImages: 1,
           imageName: 'banana',
           imageExtension: '.png'
         },
         {
-          description: 'Open-ended CIS3750 project of sample digital signage. This <a class="description-link" target="_blank" href="http://socsreynolds.site">website </a> comes with a full fledged login and signup system and allows admins to manipulate content for a dashboard. This project was created using Node.js, HTML, CSS (Bootstrap), and JavaScript (jQuery). MongoDB and Cloudinary were used for data storage (accounts, images... etc.). Additional modules and services such as nodemailer (for email signup system), Dropzone.js (file drag and drop capability) and Openweather API (for temperature information) were also used. Code and project dependencies can be found <a class="description-link" target="_blank" href="https://github.com/GV79/reynoldstest">here.</a>',
+          description: 'Open-ended CIS3750 project of sample digital signage. This <a class="description-link" target="_blank" href="http://socsreynolds.site" aria-label="Reynolds Digital Signage">website </a> comes with a full fledged login and signup system and allows admins to manipulate content for a dashboard. This project was created using Node.js, HTML, CSS (Bootstrap), and JavaScript (jQuery). MongoDB and Cloudinary were used for data storage (accounts, images... etc.). Additional modules and services such as nodemailer (for email signup system), Dropzone.js (file drag and drop capability) and Openweather API (for temperature information) were also used. Code and project dependencies can be found <a class="description-link" target="_blank" href="https://github.com/GV79/reynoldstest" aria-label="Reynolds Digital Signage GitHub">here.</a>',
           numImages: 5,
           imageName: 'signage',
           imageExtension: '.png'
         },
         {
-          description: 'This is a <a class="description-link" target="_blank" href="https://obscure-harbor-66476.herokuapp.com/">chat client </a> web app I made for fun. It was created with HTML, CSS (Bootstrap), javascript (jQuery), Node.js, Express, and Socket.IO. The chat works for anonymous users and also has account functionality via mongoDB. Test with username: \'user\' and password: \'default\'. Code can be found <a class="description-link" target="_blank" href="https://github.com/GV79/chatclient">here.</a> Due to hosting settings, the website will initially take some time to load.',
+          description: 'This is a <a class="description-link" target="_blank" href="https://obscure-harbor-66476.herokuapp.com/" aria-label="Chat Client">chat client </a> web app I made for fun. It was created with HTML, CSS (Bootstrap), javascript (jQuery), Node.js, Express, and Socket.IO. The chat works for anonymous users and also has account functionality via mongoDB. Test with username: \'user\' and password: \'default\'. Code can be found <a class="description-link" target="_blank" href="https://github.com/GV79/chatclient">here.</a> Due to hosting settings, the website will initially take some time to load.',
           numImages: 2,
           imageName: 'ChatClient',
           imageExtension: '.png'
         },
         {
-          description: '<a target="_blank" class="description-link" href="https://markmanagement.stream">Mark Management</a> is a full stack website I created for fun in order to help users manage and predict their grades (no longer hosted). It was created using HTML, CSS, Javascript, Java (Servlets and JSPs) and mySQL. It is still a WIP (Work in Progress). Functionality includes: Pages set up, form validation, signing up, logging in, responsive design, and adding/removing grades. To do: enhance grades page, SQL injection protection, and cookies. Test with username: \'user\' and password: \'default\'. Code can be found <a class="description-link" target="_blank" href="https://github.com/GV79/markmanagement">here.</a>',
+          description: '<a target="_blank" class="description-link" href="https://markmanagement.stream" aria-label="Mark Management">Mark Management</a> is a full stack website I created for fun in order to help users manage and predict their grades (no longer hosted). It was created using HTML, CSS, Javascript, Java (Servlets and JSPs) and mySQL. It is still a WIP (Work in Progress). Functionality includes: Pages set up, form validation, signing up, logging in, responsive design, and adding/removing grades. To do: enhance grades page, SQL injection protection, and cookies. Test with username: \'user\' and password: \'default\'. Code can be found <a class="description-link" target="_blank" href="https://github.com/GV79/markmanagement">here.</a>',
           numImages: 1,
           imageName: 'markmanagement',
           imageExtension: '.png'
         },
         {
-          description: '<a class="description-link" target="_blank" href="https://github.com/GV79/JavaStore">Java program</a> which allows users to store books/electronics, search the store using filters, and supports saving to/loading from text files. The program uses object-oriented concepts (polymorphism, encapsulation, abstraction, and inheritance), data structures like HashMaps and ArrayLists, Swing for the GUI, and has defensive programming/exception handling.',
+          description: '<a class="description-link" target="_blank" href="https://github.com/GV79/JavaStore" aria-label="Java Electronic Store">Java program</a> which allows users to store books/electronics, search the store using filters, and supports saving to/loading from text files. The program uses object-oriented concepts (polymorphism, encapsulation, abstraction, and inheritance), data structures like HashMaps and ArrayLists, Swing for the GUI, and has defensive programming/exception handling.',
           numImages: 4,
           imageName: 'store',
           imageExtension: '.png'
@@ -78,7 +75,7 @@
           dotTransition.setAttribute('style', 'text-align: center');
 
           for (let j = 1; j <= slideObjects[i].numImages; j++) {
-            pictureString += '<div class="slide' + (i+1) + '"><img src="images/' + slideObjects[i].imageName + j + slideObjects[i].imageExtension + '" style="width:80%"></div>';
+            pictureString += '<div class="slide' + (i+1) + '"><img src="images/' + slideObjects[i].imageName + j + slideObjects[i].imageExtension + '" style="width:100%" alt="' + slideObjects[i].imageName + '"></div>';
             dotString += '<span class="dot'  + (i+1) + '" onclick="showSlides(' + (j-1) + ', ' + (i+1) + ')"></span>';
           }
           slideshowItem.innerHTML += pictureString + '<br>';
@@ -88,7 +85,7 @@
           gridItem.setAttribute('class', 'gridItem');
           gridItem.appendChild(slideshowItem);
           gridItem.appendChild(dotTransition);
-          gridItem.innerHTML += '<h4 class="description">' + slideObjects[i].description + '</h4>';
+          gridItem.innerHTML += '<h4 class="description">' + '(' + (i+1) + '/' + slideObjects.length + ') ' + slideObjects[i].description + '</h4>';
           gridContainer.appendChild(gridItem);  
         }
       }
@@ -127,19 +124,12 @@
     </script>
   </head>
   <body>
-    <div class="header">
-        <div id="logo"><i onClick="homepage()" class="fa fa-codepen" style="cursor: pointer; margin-top: -0.07em; padding-left: 0.5em; padding-top: 0.1em; padding-bottom: 0em; color: white; background-color: rgb(29, 38, 43); font-size: 32px;"></i></div>
-        <div><a class="headerItem" href="index.html ">Home</a></div>
-        <div><a class="headerItem" href="about.html ">About</a></div>
-        <div><a class="headerItem" href="resume.html">Resume</a></div>
-    </div>
-
     <div id="particles-js" style="height: 400px; width: 100%; z-index: -10; position: absolute;"></div>
     <script src="particles.js"></script>
     <script src="app.js"></script>
     <script src="lib/stats.js"></script>
 
-    <h1>Giavinh Lam<h1>
+    <div class="header"><h1>Giavinh Lam</h1></div>
     <h2>4th year Computer Engineering student at the University of Guelph</h2><p><br></p>
 
     <div class="bottom">
@@ -147,10 +137,18 @@
       <div class="gridContainer"></div>
     </div>
 
+    <div class="about"> <!-- #5c5c7d || #8080b3 || #eeeeff || #eff4ff -->
+          <div><i class="fa fa-user" style="color: black; font-size: 60px;"></i><h3>Who Am I?</h3></div>
+          <div><h6>&emsp;&emsp;Hi! My name is Giavinh Lam. I am currently working towards a Bachelor's in Computer Engineering at the University of Guelph. This website was created from scratch using HTML, CSS, and Javascript to show off my portfolio. For more information about my skills, please see my <a target="_blank" href="./docs/gl.pdf" class="description-link" download="./docs/gl.pdf" style="font-weight: bold; color: #3c53a9">Resume</a> or <a target="_blank" class="description-link" style="font-weight: bold; color: #3c53a9" href="https://github.com/gv79">GitHub.</a></h6></div>
+          <div><h6>&emsp;&emsp;My program has given me a lot of exposure to both computer hardware and software, and has helped me develop strong technical and thinking skills. In my courses, I have used programming languages such as Java, C, Python, SQL, VHDL, and ARM Assembly to develop some really cool programs. I enjoy programming and learning new things which is why in my free time I often try to tackle new frontend and backend web development languages. It excites me seeing how many different paths you can take in software development and I'm hoping that through personal projects and job experiences, I can find the right place for me.</h6></div>
+          <div style="text-align: center">
+              <img class="resumePicture" src="docs/0001.jpg" alt="Resume">
+          </div>
+    </div>
     <div class="footer">
-      <a target="_blank" href="https://www.linkedin.com/in/giavinh-lam-aa5bb2117/"><i class="fa fa-linkedin-square" style="font-size: 40px; margin: 20px 2px 0 2px"></i></a>
-      <a target="_blank" href="https://github.com/gv79"><i class="fa fa-github" style="font-size: 40px; margin: 20px 2px 0 2px"></i></a>
-      <a target="_blank" href="mailto:glam01@uoguelph.ca"><i class="fa fa-envelope" style="font-size: 40px; margin: 20px 2px 0 2px"></i></a>
+      <a target="_blank" href="https://www.linkedin.com/in/giavinh-lam-aa5bb2117/"><i class="fa fa-linkedin-square" style="font-size: 40px; margin: 0 2px 0 2px"></i></a>
+      <a target="_blank" href="https://github.com/gv79"><i class="fa fa-github" style="font-size: 40px; margin: 0 2px 0 2px"></i></a>
+      <a target="_blank" href="mailto:glam01@uoguelph.ca"><i class="fa fa-envelope" style="font-size: 40px; margin: 0 2px 0 2px"></i></a>
     </div>
 
     <script>
