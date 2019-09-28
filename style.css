@@ -53,6 +53,11 @@ h6 {
   font-weight: 400;
 }
 
+.projects {
+  display: inline-block;
+  padding-top: 0.3em;
+}
+
 .about {
   display: flex;
   justify-content: center;

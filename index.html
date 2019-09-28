@@ -19,54 +19,122 @@
 
   <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
   <script>
-    // TODO - Optimize images, minimize/uglify JS/CS, update resume
+    // TODO - Optimize images further, minimize/uglify JS/CS (already small though)
+    let count;
     let currentSlide;
+    let search;
     const slideObjects = [
       {
-        description: 'Open-ended CIS4720 (image processing) project for detecting the ripeness of a banana. This <a class="description-link" target="_blank" rel="noopener noreferrer" href="http://stark-gorge-37151.herokuapp.com/" aria-label="Banana Ripeness Detector">web application </a> makes it easy to test whether a banana is ripe, overripe, or underripe. It may take some time to initially load the website due to being deployed using a free Heroku dyno. This project was created using React.js (frontend) and Python 3 (backend). I worked on the algorithm and front-end design for this project. Code and project dependencies can be found <a class="description-link" target="_blank" href="https://github.com/peken97/BananaRipenessDetector" rel="noopener noreferrer" aria-label="Banana Ripeness Detector GitHub">here.</a>',
+        description: 'Open-ended CIS4720 (image processing) project for detecting the ripeness of a banana. This <a class="description-link" target="_blank" rel="noopener noreferrer" href="http://stark-gorge-37151.herokuapp.com/" aria-label="Banana Ripeness Detector">web application </a> makes it easy to test whether a banana is ripe, overripe, or underripe. It may take some time to initially load the website due to being deployed using a free Heroku dyno. This project was created using <span style="color: #32738c">React.js</span> (frontend) and <span style="color: #32738c">Python 3</span> (backend). I worked on the algorithm and front-end design for this project. Code and project dependencies can be found <a class="description-link" target="_blank" href="https://github.com/peken97/BananaRipenessDetector" rel="noopener noreferrer" aria-label="Banana Ripeness Detector GitHub">here.</a>',
         numImages: 1,
         imageName: 'banana',
-        imageExtension: '.png'
+        imageExtension: '.png',
+        tags: ['react', 'javascript', 'python', 'html', 'css']
       },
       {
-        description: 'Open-ended CIS3750 project of sample digital signage. This <a class="description-link" target="_blank" rel="noopener noreferrer" href="http://socsreynolds.site" aria-label="Reynolds Digital Signage">website </a> comes with a full fledged login and signup system and allows admins to manipulate content for a dashboard. This project was created using Node.js, HTML, CSS (Bootstrap), and JavaScript (jQuery). MongoDB and Cloudinary were used for data storage (accounts, images... etc.). Additional modules and services such as nodemailer (for email signup system), Dropzone.js (file drag and drop capability) and Openweather API (for temperature information) were also used. Code and project dependencies can be found <a class="description-link" target="_blank" rel="noopener noreferrer" href="https://github.com/GV79/reynoldstest" aria-label="Reynolds Digital Signage GitHub">here.</a>',
+        description: 'This project was designed to completely reimagine the UI and UX of NCR\'s product Passport in <span style="color: #32738c">React.js</span>. Passport is a product which allows depositing checks at various locations however it was plagued by poor routing, UX, and design with JSPs (Java Server Pages). This application was developed by a group of co-ops for a two day long hackathon (NCR\'s Global Hackathon) and consists of a frontend web app, backend (Node.js), and mobile app (React Native). In addition to the frontend overhaul, the mobile app used web sockets and QR code scanning to show a potential solution to a problem a teller might have using Passport (if the scanner breaks, the teller may take a picture of the check and send it directly to the correct deposit). I mainly worked on the frontend design and functionality. Code and project dependencies can be found <a class="description-link" target="_blank" href="https://github.com/GV79/Passport-4.0" rel="noopener noreferrer" aria-label="Passport-4.0 GitHub">here.</a> As it was a hackathon, the code structure and styling is ...not amazing.',
+        numImages: 5,
+        imageName: 'passport',
+        imageExtension: '.jpg',
+        tags: ['react', 'javascript', 'html', 'css', 'material-UI']
+      },
+      {
+        description: 'This is currently a WIP and currently in a private repository. I used <span style="color: #32738c">React.js</span> to overhaul the frontend design of this company landing page. The first picture shows my revamp to the company\'s homepage and the second picture shows the original.',
+        numImages: 2,
+        imageName: 'mrflatbeds',
+        imageExtension: '.png',
+        tags: ['react', 'javascript', 'html', 'css', 'reactstrap']
+      },
+      {
+        description: 'Open-ended CIS3750 project of sample digital signage. This <a class="description-link" target="_blank" rel="noopener noreferrer" href="http://socsreynolds.site" aria-label="Reynolds Digital Signage">website </a> comes with a full fledged login and signup system and allows admins to manipulate content for a dashboard. This project was created using <span style="color: #32738c">Node.js</span>, <span style="color: #32738c">HTML</span>, <span style="color: #32738c">CSS (Bootstrap)</span>, and <span style="color: #32738c">JavaScript (jQuery)</span>. <span style="color: #32738c">MongoDB</span> and <span style="color: #32738c">Cloudinary</span> were used for data storage (accounts, images... etc.). Additional modules and services such as <span style="color: #32738c">nodemailer</span> (for email signup system), <span style="color: #32738c">Dropzone.js</span> (file drag and drop capability) and <span style="color: #32738c">Openweather API</span> (for temperature information) were also used. Code and project dependencies can be found <a class="description-link" target="_blank" rel="noopener noreferrer" href="https://github.com/GV79/reynoldstest" aria-label="Reynolds Digital Signage GitHub">here.</a>',
         numImages: 5,
         imageName: 'signage',
-        imageExtension: '.png'
+        imageExtension: '.png',
+        tags: ['javascript', 'api', 'html', 'css', 'mongoDB', 'noSQL', 'non-relational']
       },
       {
-        description: 'This is a <a class="description-link" target="_blank" rel="noopener noreferrer" href="https://obscure-harbor-66476.herokuapp.com/" aria-label="Chat Client">chat client </a> web app I made for fun. It was created with HTML, CSS (Bootstrap), javascript (jQuery), Node.js, Express, and Socket.IO. The chat works for anonymous users and also has account functionality via mongoDB. Test with username: \'user\' and password: \'default\'. Code can be found <a class="description-link" target="_blank" href="https://github.com/GV79/chatclient" rel="noopener noreferrer">here.</a> Due to hosting settings, the website will initially take some time to load.',
+        description: 'This is a <a class="description-link" target="_blank" rel="noopener noreferrer" href="https://obscure-harbor-66476.herokuapp.com/" aria-label="Chat Client">chat client </a> web app I made for fun. It was created with <span style="color: #32738c">HTML</span>, <span style="color: #32738c">CSS (Bootstrap)</span>, <span style="color: #32738c">JavaScript (jQuery)</span>, <span style="color: #32738c">Node.js</span>, <span style="color: #32738c">Express</span>, and <span style="color: #32738c">Socket.IO</span>. The chat works for anonymous users and also has account functionality via <span style="color: #32738c">mongoDB</span>. The DB key is exposed on the GitHub repo so test with username: \'user\' and password: \'default\'. Code can be found <a class="description-link" target="_blank" href="https://github.com/GV79/chatclient" rel="noopener noreferrer">here.</a> Due to hosting settings, the website will initially take some time to load.',
         numImages: 2,
         imageName: 'ChatClient',
-        imageExtension: '.png'
+        imageExtension: '.png',
+        tags: ['node.js', 'socket.IO', 'express', 'javascript', 'mongoDB', 'noSQL', 'non-relational', 'html', 'css']
       },
       {
-        description: '<a target="_blank" rel="noopener noreferrer" class="description-link" href="https://markmanagement.stream" aria-label="Mark Management">Mark Management</a> is a full stack website I created for fun in order to help users manage and predict their grades (no longer hosted). It was created using HTML, CSS, Javascript, Java (Servlets and JSPs) and mySQL. It is still a WIP (Work in Progress). Functionality includes: Pages set up, form validation, signing up, logging in, responsive design, and adding/removing grades. To do: enhance grades page, SQL injection protection, and cookies. Test with username: \'user\' and password: \'default\'. Code can be found <a class="description-link" target="_blank" href="https://github.com/GV79/markmanagement" rel="noopener noreferrer">here.</a>',
+        description: '<a target="_blank" rel="noopener noreferrer" class="description-link" href="https://markmanagement.stream" aria-label="Mark Management">Mark Management</a> is a full stack website I created for fun in order to help users manage and predict their grades (no longer hosted). It was created using <span style="color: #32738c">HTML</span>, <span style="color: #32738c">CSS</span>, <span style="color: #32738c">Javascript</span>, <span style="color: #32738c">Java (Servlets and JSPs)</span> and <span style="color: #32738c">mySQL</span>. It is still a WIP (Work in Progress). Functionality includes: Pages set up, form validation, signing up, logging in, responsive design, and adding/removing grades. To do: enhance grades page, SQL injection protection, and cookies. Test with username: \'user\' and password: \'default\'. Code can be found <a class="description-link" target="_blank" href="https://github.com/GV79/markmanagement" rel="noopener noreferrer">here.</a>',
         numImages: 1,
         imageName: 'markmanagement',
-        imageExtension: '.png'
+        imageExtension: '.png',
+        tags: ['java', 'jsp', 'servlet', 'html', 'css', 'mySQL', 'sql']
       },
       {
         description: '<a class="description-link" target="_blank" rel="noopener noreferrer" href="https://github.com/GV79/JavaStore" aria-label="Java Electronic Store">Java program</a> which allows users to store books/electronics, search the store using filters, and supports saving to/loading from text files. The program uses object-oriented concepts (polymorphism, encapsulation, abstraction, and inheritance), data structures like HashMaps and ArrayLists, Swing for the GUI, and has defensive programming/exception handling.',
         numImages: 4,
         imageName: 'store',
-        imageExtension: '.png'
+        imageExtension: '.png',
+        tags: ['java']
       },
       {
-        description: 'iCalendar (<a class="description-link" target="_blank" rel="noopener noreferrer" href="https://tools.ietf.org/html/rfc5545">.ics files</a>) parser and information extractor. The frontend was created using Python 3 (TkInter), logic/core functionality was implemented with C, and Python was also used to communicate with the mySQL database. This program was setup and created all in the Linux terminal. Code can be found <a class="description-link" target="_blank" rel="noopener noreferrer" href="https://github.com/GV79/calendarPlus-SQL">here.</a>',
+        description: 'iCalendar (<a class="description-link" target="_blank" rel="noopener noreferrer" href="https://tools.ietf.org/html/rfc5545">.ics files</a>) parser and information extractor. The frontend was created using <span style="color: #32738c">Python 3 (TkInter)</span>, logic/core functionality was implemented with <span style="color: #32738c">C</span>, and <span style="color: #32738c">Python</span> was also used to communicate with the <span style="color: #32738c">mySQL</span> database. This program was setup and created all in the Linux terminal. Code can be found <a class="description-link" target="_blank" rel="noopener noreferrer" href="https://github.com/GV79/calendarPlus-SQL">here.</a>',
         numImages: 3,
         imageName: 'calendar',
-        imageExtension: '.png'
+        imageExtension: '.png',
+        tags: ['c', 'python', 'database', 'relational', 'sql', 'mySQL']
       },
       {
-        description: 'French Conjugator is an Android app I created for fun to help users with their french conjugation skills. It was created using Java in Android Studio and is still a WIP.',
+        description: 'French Conjugator is an Android app I created for fun to help users with their french conjugation skills. It was created using <span style="color: #32738c">Java</span> in <span style="color: #32738c">Android Studio</span> and is still a WIP.',
         numImages: 4,
         imageName: 'french',
-        imageExtension: '.png'
+        imageExtension: '.png',
+        tags: ['java', 'mobile', 'android']
       }
     ]
 
-    parseSlides = (slideObjects) => {
+    parseSlides = (slideObjects, filter) => {
+      count = 0;
+      let gridContainer = document.querySelector('.gridContainer');
+      let filteredObjects = [];
+      gridContainer.innerHTML = "";
+
+      for (let i = 0; i < slideObjects.length; i++) {
+        if (filter && slideObjects[i].tags.includes(filter.toLowerCase())) {
+          filteredObjects.push(slideObjects[i]);
+          continue;
+        }
+      }
+
+      if (!filter && filteredObjects.length === 0) filteredObjects = [...slideObjects];
+      count = filteredObjects.length;
+
+      for (let i = 0; i < filteredObjects.length; i++) {
+        let pictureString = '';
+        let dotString = '';
+        let slideshowItem = document.createElement('div');
+        let dotTransition = document.createElement('div');
+        slideshowItem.setAttribute('class', 'slideshow');
+        dotTransition.setAttribute('style', 'text-align: center');
+
+        for (let j = 1; j <= filteredObjects[i].numImages; j++) {
+          pictureString += '<div class="slide' + (i + 1) + '"><img src="images/' + filteredObjects[i].imageName + j + filteredObjects[i].imageExtension + '" style="width:100%" alt="' + filteredObjects[i].imageName + '"></div>';
+          dotString += '<span class="dot' + (i + 1) + '" onclick="showSlides(' + (j - 1) + ', ' + (i + 1) + ')"></span>';
+        }
+        slideshowItem.innerHTML += pictureString + '<br>';
+        dotTransition.innerHTML += dotString;
+
+        let gridItem = document.createElement('div');
+        gridItem.setAttribute('class', 'gridItem');
+        gridItem.appendChild(slideshowItem);
+        gridItem.appendChild(dotTransition);
+        gridItem.innerHTML += '<h4 class="description">' + '(' + (i + 1) + '/' + count + ') ' + filteredObjects[i].description + '</h4>';
+        gridContainer.appendChild(gridItem);
+      }
+
+      if (filter && count === 0 && !gridContainer.innerHTML.includes('nodata.svg'))
+        gridContainer.innerHTML = "<div style=\"width: 100%;\"><img src=\"images/nodata.svg\" style=\"padding: 2rem 2rem 0 2rem; width: 60%; max-width: 35rem;\"/><p class=\"description\" style=\"padding-bottom: 2rem;\">No data available</p></div>";
+
+      document.querySelector('.projects').innerHTML = `Coding Projects (${count || 0})`;
+    }
+
+    parseCards = (slideObjects) => {
       let gridContainer = document.querySelector('.gridContainer');
 
       for (let i = 0; i < slideObjects.length; i++) {
@@ -98,14 +166,14 @@
     }
 
     function showSlides(n, m) {
+      if (count === 0) return;
       let i, projects, slides, dots;
-
       currentSlide = m;
       slides = document.getElementsByClassName("slide".concat(m));
       dots = document.getElementsByClassName("dot".concat(m));
       projects = document.getElementsByClassName("gridItem");
 
-      for (i = 0; i < slideObjects.length; i++) {
+      for (i = 0; i < (count); i++) {
         projects[i].style.display = "none";
       } projects[m - 1].style.display = "block";
 
@@ -118,11 +186,11 @@
     }
 
     function prev() {
-      currentSlide > 1 ? showSlides(0, currentSlide - 1) : showSlides(0, slideObjects.length);
+      currentSlide > 1 ? showSlides(0, currentSlide - 1) : showSlides(0, count);
     }
 
     function next() {
-      currentSlide < slideObjects.length ? showSlides(0, currentSlide + 1) : showSlides(0, 1);
+      currentSlide < count ? showSlides(0, currentSlide + 1) : showSlides(0, 1);
     }
   </script>
 </head>
@@ -136,13 +204,23 @@
   <div class="header">
     <h1>Giavinh Lam</h1>
   </div>
-  <h2>4th year Computer Engineering student at the University of Guelph</h2>
+  <h2>5th year Computer Engineering Co-op Student at the University of Guelph</h2>
   <p><br></p>
 
   <div class="bottom">
     <div><a class="prev" onclick="prev()">&#10094;</a>
-      <h3 style="display: inline-block; padding-top: 0.3em;">Coding Projects</h3><a class="next"
-        onclick="next()">&#10095;</a>
+      <h3 class="projects">Coding Projects</h3><a class="next" onclick="next()">&#10095;</a>
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center; color: #666; padding-top: 2rem;">
+      <div style="display: flex; align-items: center;">
+        <i class="fa fa-search" aria-hidden="true" style="color: #666; z-index: 10; margin-top: -0.1rem;"></i>
+        <input id="search" type="text" style="margin-left: -2rem; padding: 0.4rem 1rem 0.4rem 2.5rem;"
+          placeholder="Filter by technologies"></input>
+      </div>
+      <div><i class="fa fa-arrows-h" aria-hidden="true"
+          style="color: black; margin: 0 0.5rem; cursor: pointer; font-weight: bold;"></i>
+      </div>
+      <div><i class="fa fa-square-o" aria-hidden="true" style="color: #666; cursor: pointer;"></i></div>
     </div>
     <div class="gridContainer"></div>
   </div>
@@ -154,10 +232,12 @@
     <div>
       <h6>&emsp;&emsp;Hi! My name is Giavinh Lam. I am currently working towards a Bachelor's in Computer Engineering at
         the University of Guelph. This website was created from scratch using HTML, CSS, and Javascript to show off my
-        portfolio. For more information about my skills, please see my <a target="_blank" href="./docs/giavinhlam.pdf"
-          class="description-link" download="giavinhlam.pdf" style="font-weight: bold; color: #3c53a9">Resume</a> or <a
-          target="_blank" rel="noopener noreferrer" class="description-link" style="font-weight: bold; color: #3c53a9"
-          href="https://github.com/gv79">GitHub.</a></h6>
+        portfolio. For more information about my skills or other projects, please see my
+        <a target="_blank" href="./docs/giavinhlam.pdf" class="description-link" download="giavinhlam.pdf"
+          style="font-weight: bold; color: #3c53a9">Resume</a> <i class="fa fa-download" aria-hidden="true"
+          style="color: #666;"></i> or <a target="_blank" rel="noopener noreferrer" class="description-link"
+          style="font-weight: bold; color: #3c53a9" href="https://github.com/gv79">GitHub.</a>
+      </h6>
     </div>
     <div>
       <h6>&emsp;&emsp;My program has given me a lot of exposure to both computer hardware and software, and has helped
@@ -182,6 +262,14 @@
   <script>
     parseSlides(slideObjects);
     showSlides(0, 1);
+
+    search = document.getElementById('search');
+    search.addEventListener('input', obj => {
+      document.querySelector('.gridContainer').innerHTML = "";
+      parseSlides(slideObjects, search.value)
+      showSlides(0, 1, count);
+    });
+
     ScrollReveal().reveal('.about > div > i', { delay: 200, duration: 1000 });
     ScrollReveal().reveal('.about > div > h3', { delay: 200, duration: 1000 });
     ScrollReveal().reveal('.about > div > h6', { delay: 400, duration: 1000 });
