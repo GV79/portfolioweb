@@ -53,6 +53,31 @@ h6 {
   font-weight: 400;
 }
 
+/* .autocomplete-items {
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  width: 100%;
+  z-index: 99;
+} */
+.autocomplete-items {
+  font-family: 'Montserrat';
+  font: 400 13.3333px Arial;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #d4d4d4;
+  border-top: none;
+}
+/* .autocomplete-items div:hover {
+  background-color: #e9e9e9;
+} */
+.autocomplete-items:hover {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: #e9e9e9;
+  /* color: #ffffff; */
+}
+
 .projects {
   display: inline-block;
   padding-top: 0.3em;
@@ -212,6 +237,14 @@ div img {
 
 .active, .dot:hover {
   background-color: #757474;
+}
+
+.searchWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #666;
+  padding-top: 2rem;
 }
 
 .fade {
