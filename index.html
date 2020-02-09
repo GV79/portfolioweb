@@ -25,30 +25,41 @@
       let currentSlide;
       let search;
       const tags = [
-        'React',
-        'JavaScript',
-        'Python',
-        'HTML',
+        'Adonis',
+        'Android',
+        'Ant Design',
         'CSS',
-        'Material-UI',
-        'Socket.IO',
-        'Reactstrap',
-        'MongoDB',
-        'noSQL',
         'Cloudinary',
         'Dropzone.js',
-        'Java',
-        'JSP',
-        'Servlet',
-        'mySQL',
-        'SQL',
-        'Nodemailer',
-        'Node.js',
         'Express',
-        'Android',
+        'HTML',
+        'JSP',
+        'Java',
+        'JavaScript',
+        'Material-UI',
+        'MongoDB',
+        'mySQL',
+        'Node.js',
+        'Nodemailer',
+        'noSQL',
+        'ORM',
+        'Python',
+        'React',
+        'Reactstrap',
+        'SQL',
+        'Servlet',
+        'Socket.IO',
       ];
 
       const slideObjects = [
+        {
+          description:
+            '<span style="font-weight: bold">Plop:</span> This web application is a simple project management tool (think Jira but free and simpler). This project was created using <span style="color: #32738c">React.js</span>, <span style="color: #32738c">Ant Design</span> and <span style="color: #32738c">Adonis.js</span> (backend). Planned to be deployed on Heroku or DigitalOcean when more work is done. Code and project dependencies can be found <a class="description-link" target="_blank" href="https://github.com/GV79/Plop" rel="noopener noreferrer" aria-label="Plop GitHub">here.</a>',
+          numImages: 4,
+          imageName: 'plop',
+          imageExtension: '.png',
+          tags: ['react', 'javascript', 'adonis', 'html', 'mysql', 'postgresql', 'orm', 'ant design', 'css'],
+        },
         {
           description:
             '<span style="font-weight: bold">Banana Ripeness Detector:</span> Open-ended CIS4720 (image processing) project for detecting the ripeness of a banana. This <a class="description-link" target="_blank" rel="noopener noreferrer" href="http://stark-gorge-37151.herokuapp.com/" aria-label="Banana Ripeness Detector">web application </a> makes it easy to test whether a banana is ripe, overripe, or underripe. It may take some time to initially load the website due to being deployed using a free Heroku dyno. This project was created using <span style="color: #32738c">React.js</span> (frontend) and <span style="color: #32738c">Python 3</span> (backend). I worked on the algorithm and front-end design for this project. Code and project dependencies can be found <a class="description-link" target="_blank" href="https://github.com/peken97/BananaRipenessDetector" rel="noopener noreferrer" aria-label="Banana Ripeness Detector GitHub">here.</a>',
@@ -67,7 +78,7 @@
         },
         {
           description:
-            '<span style="font-weight: bold">MR.Flatbeds:</span> This is currently a WIP and currently in a private repository. I used <span style="color: #32738c">React.js</span> to overhaul the frontend design of this company landing page. The first picture shows my revamp to the company\'s homepage and the second picture shows the original.',
+            '<span style="font-weight: bold">MR.Flatbeds:</span> This is currently a WIP and currently in a private repository. I used <span style="color: #32738c">React.js</span> to overhaul the frontend design of this company landing page. Accessibility, responsiveness, and loading times (optimizing image sizes) were also improved. The first picture shows my revamp to the company\'s homepage and the second picture shows the original.',
           numImages: 2,
           imageName: 'mrflatbeds',
           imageExtension: '.jpg',
@@ -212,7 +223,15 @@
           gridItem.setAttribute('class', 'gridItem');
           gridItem.appendChild(slideshowItem);
           gridItem.appendChild(dotTransition);
-          gridItem.innerHTML += '<h4 class="description">' + '(' + (i + 1) + '/' + slideObjects.length + ') ' + slideObjects[i].description + '</h4>';
+          gridItem.innerHTML +=
+            '<h4 class="description">' +
+            '(' +
+            (i + 1) +
+            '/' +
+            slideObjects.length +
+            ') ' +
+            slideObjects[i].description +
+            '</h4>';
           gridContainer.appendChild(gridItem);
         }
       };
@@ -286,10 +305,7 @@
               autocomplete="off"
             />
           </div>
-          <div
-            class="autocomplete-list"
-            style="position: absolute; margin-top: 2rem; width: 100%; z-index: 99;"
-          ></div>
+          <div class="autocomplete-list" style="position: absolute; margin-top: 2rem; width: 100%; z-index: 99;"></div>
         </div>
       </div>
       <div class="gridContainer"></div>
@@ -366,7 +382,11 @@
         list.innerHTML = '';
         let matchedTags = '';
         for (tag of tags) {
-          if (search.value && tag.substr(0, search.value.length).toLowerCase() === search.value.toLowerCase() && tag.toLowerCase() !== search.value.toLowerCase()) {
+          if (
+            search.value &&
+            tag.substr(0, search.value.length).toLowerCase() === search.value.toLowerCase() &&
+            tag.toLowerCase() !== search.value.toLowerCase()
+          ) {
             item = document.createElement('div');
             item.setAttribute('class', 'autocomplete-items');
             item.textContent = tag;
@@ -390,7 +410,7 @@
 
       search.addEventListener('focusin', () => {
         list.style.display = 'block';
-      })
+      });
 
       document.body.addEventListener('mousedown', e => {
         if (!searchContainer.contains(e.target)) {
