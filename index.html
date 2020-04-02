@@ -21,9 +21,6 @@
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     <script>
       // TODO - Optimize images further, minimize/uglify JS/CS (already small though)
-      let count;
-      let currentSlide;
-      let search;
       const tags = [
         'Adonis',
         'Android',
@@ -46,19 +43,29 @@
         'Python',
         'React',
         'Reactstrap',
+        'Redux',
         'SQL',
         'Servlet',
         'Socket.IO',
+        'Webscraping',
       ];
 
       const slideObjects = [
         {
           description:
-            '<span style="font-weight: bold">Plop:</span> This web application is a simple project management tool (think Jira but free and simpler). This project was created using <span style="color: #32738c">React.js</span>, <span style="color: #32738c">Ant Design</span> and <span style="color: #32738c">Adonis.js</span> (backend). Planned to be deployed on Heroku or DigitalOcean when more work is done. Code and project dependencies can be found <a class="description-link" target="_blank" href="https://github.com/GV79/Plop" rel="noopener noreferrer" aria-label="Plop GitHub">here.</a>',
-          numImages: 4,
+            '<span style="font-weight: bold">Plop:</span> This web application side project is a simple project management tool for small teams. It is currently at version 0.8 and the main features currently in development are web sockets (to show live changes, have chat, and have real-time notifications) and administration levels (to manage members and have a hierarchy in place). This project was created using <span style="color: #32738c">React.js</span>, <span style="color: #32738c">Ant Design</span> and <span style="color: #32738c">Adonis.js</span> (backend Node.js web framework). The application is currently deployed on <a class="description-link" target="_blank" href="https://plop.team" rel="noopener noreferrer" aria-label="Plop website">https://plop.team</a> using Netlify and communicates with the REST API hosted at <a class="description-link" target="_blank" href="https://github.com/GV79/Plop" rel="noopener noreferrer" aria-label="Plop Backend">https://plopwebapp.herokuapp.com</a> through Heroku. Code and project dependencies can be found <a class="description-link" target="_blank" href="https://github.com/GV79/Plop" rel="noopener noreferrer" aria-label="Plop GitHub">here.</a>',
+          numImages: 5,
           imageName: 'plop',
           imageExtension: '.png',
           tags: ['react', 'javascript', 'adonis', 'html', 'mysql', 'postgresql', 'orm', 'ant design', 'css'],
+        },
+        {
+          description:
+            '<span style="font-weight: bold">Lego Project:</span> This is a design project done for school which is composed of many different modules (frontend, backend, data extractor module, reinforcement environment...). I mainly worked on the front-end application for the project demo, the data extraction module, and the machine learning environment\'s reward function. The main RL environment repo is hosted privately. The first image represents the basic frontend demo skeleton. The project\'s code and deployment link can be found <a class="description-link" target="_blank" href="https://github.com/GV79/lego-ml-frontend" rel="noopener noreferrer" aria-label="Lego Frontend">here</a> and was created using <span style="color: #32738c">React.js</span> and <span style="color: #32738c">Material-UI</span>. The second image represents the backend data scraper however has been deprecated due to no longer needing this type of data. Written with <span style="color: #32738c">Node.js</span>, this web-scraping and API calling application\'s repo can be found <a class="description-link" target="_blank" href="https://github.com/GV79/lego-data-collection" rel="noopener noreferrer" aria-label="Lego Data Scraper">here</a>. Finally, the third image represents some output from the build stability reward function I designed for the Lego RL environment. This module was programmed in <span style="color: #32738c">Python 3</span> using PyCharm. Code for this project along with the Jupyter Notebook can be found <a class="description-link" target="_blank" href="https://github.com/GV79/lego-build-stability" rel="noopener noreferrer" aria-label="Lego Build Stability function">here.</a>',
+          numImages: 3,
+          imageName: 'lego',
+          imageExtension: '.png',
+          tags: ['react', 'javascript', 'material-ui', 'html', 'redux', 'css', 'python', 'node.js', 'webscraping'],
         },
         {
           description:
@@ -86,11 +93,11 @@
         },
         {
           description:
-            '<span style="font-weight: bold">Reynold\'s Digital Signage:</span> Open-ended CIS3750 project of sample digital signage. This <a class="description-link" target="_blank" rel="noopener noreferrer" href="http://socsreynolds.site" aria-label="Reynolds Digital Signage">website </a> comes with a full fledged login and signup system and allows admins to manipulate content for a dashboard. This project was created using <span style="color: #32738c">Node.js</span>, <span style="color: #32738c">HTML</span>, <span style="color: #32738c">CSS (Bootstrap)</span>, and <span style="color: #32738c">JavaScript (jQuery)</span>. <span style="color: #32738c">MongoDB</span> and <span style="color: #32738c">Cloudinary</span> were used for data storage (accounts, images... etc.). Additional modules and services such as <span style="color: #32738c">nodemailer</span> (for email signup system), <span style="color: #32738c">Dropzone.js</span> (file drag and drop capability) and <span style="color: #32738c">Openweather API</span> (for temperature information) were also used. Code and project dependencies can be found <a class="description-link" target="_blank" rel="noopener noreferrer" href="https://github.com/GV79/reynoldstest" aria-label="Reynolds Digital Signage GitHub">here.</a>',
+            '<span style="font-weight: bold">Reynold\'s Digital Signage:</span> Open-ended CIS3750 project of sample digital signage. This <a class="description-link" target="_blank" rel="noopener noreferrer" href="http://socsreynolds.site" aria-label="Reynolds Digital Signage">website </a> (no longer deployed) comes with a full fledged login and signup system and allows admins to manipulate content for a dashboard. This project was created using <span style="color: #32738c">Node.js</span>, <span style="color: #32738c">HTML</span>, <span style="color: #32738c">CSS (Bootstrap)</span>, and <span style="color: #32738c">JavaScript (jQuery)</span>. <span style="color: #32738c">MongoDB</span> and <span style="color: #32738c">Cloudinary</span> were used for data storage (accounts, images... etc.). Additional modules and services such as <span style="color: #32738c">nodemailer</span> (for email signup system), <span style="color: #32738c">Dropzone.js</span> (file drag and drop capability) and <span style="color: #32738c">Openweather API</span> (for temperature information) were also used. Code and project dependencies can be found <a class="description-link" target="_blank" rel="noopener noreferrer" href="https://github.com/GV79/reynoldstest" aria-label="Reynolds Digital Signage GitHub">here.</a>',
           numImages: 5,
           imageName: 'signage',
           imageExtension: '.png',
-          tags: ['javascript', 'cloudinary', 'nodemailer', 'dropzone.js', 'html', 'css', 'mongodb', 'noSQL'],
+          tags: ['node.js', 'javascript', 'cloudinary', 'nodemailer', 'dropzone.js', 'html', 'css', 'mongodb', 'noSQL'],
         },
         {
           description:
@@ -138,12 +145,18 @@
         count = 0;
         let gridContainer = document.querySelector('.gridContainer');
         let filteredObjects = [];
+        let truncatedTags = [];
         gridContainer.innerHTML = '';
 
-        for (let i = 0; i < slideObjects.length; i++) {
-          if (filter && slideObjects[i].tags.includes(filter.toLowerCase())) {
-            filteredObjects.push(slideObjects[i]);
-            continue;
+        if (filter) {
+          for (let i = 0; i < slideObjects.length; i++) {
+            truncatedTags = slideObjects[i].tags.map(item => {
+              return item.substring(0, filter.length).toLowerCase();
+            });
+
+            if (truncatedTags.includes(filter.toLowerCase())) {
+              filteredObjects.push(slideObjects[i]);
+            }
           }
         }
 
@@ -342,11 +355,11 @@
       </div>
       <div>
         <h6>
-          &emsp;&emsp;My program has given me a lot of exposure to both computer hardware and software, and has helped
-          me develop strong technical and thinking skills. I enjoy programming and learning new things which is why I
-          often try to tackle new frontend and backend web development languages. It excites me seeing how many
-          different paths you can take in software development and I'm hoping that through personal projects and job
-          experiences, I can find the right place for me.
+          &emsp;&emsp;My program and work experiences have given me a lot of exposure in using different technologies
+          and collaborating with others. As a result of these experiences and personal coding projects, I was able to
+          develop good coding practices and design, strong skills in problem solving, and strong knowledge in backend
+          technologies, frontend technologies, and tools standard in the software industry. I enjoy programming,
+          learning new things, and seeing all the different paths you can take in software development.
         </h6>
       </div>
       <div style="text-align: center">
@@ -373,11 +386,24 @@
       parseSlides(slideObjects);
       showSlides(0, 1);
 
-      search = document.getElementById('search');
-      searchContainer = document.querySelector('.searchContainer');
-      list = document.querySelector('.autocomplete-list');
+      let search = document.getElementById('search');
+      let searchContainer = document.querySelector('.searchContainer');
+      let list = document.querySelector('.autocomplete-list');
 
-      autocompleteMenu = () => {
+      const debounce = (func, wait) => {
+        let timeout;
+        return function() {
+          let args = arguments;
+          let exec = function() {
+            timeout = null;
+            func.apply(this, args);
+          };
+          clearTimeout(timeout);
+          timeout = setTimeout(exec, wait);
+        };
+      };
+
+      const autocompleteMenu = () => {
         document.querySelector('.gridContainer').innerHTML = '';
         list.innerHTML = '';
         let matchedTags = '';
@@ -404,8 +430,12 @@
         showSlides(0, 1, count);
       };
 
-      search.addEventListener('input', obj => {
+      const efficientAutocomplete = debounce(function() {
         autocompleteMenu();
+      }, 250);
+
+      search.addEventListener('input', obj => {
+        efficientAutocomplete();
       });
 
       search.addEventListener('focusin', () => {
